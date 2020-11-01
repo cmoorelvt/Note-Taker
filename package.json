@@ -13,11 +13,9 @@
   },
   "author": "Christine Moore",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cmoorelvt/Note-Taker/issues"
-  },
   "homepage": "https://github.com/cmoorelvt/Note-Taker#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
   }
 }
