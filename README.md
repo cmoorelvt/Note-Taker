@@ -1,6 +1,6 @@
 # Unit 11 Express Homework: Note Taker
 
-Heroku deployed link: https://shrouded-stream-21175.herokuapp.com/notes
+Heroku deployed link: https://shrouded-stream-21175.herokuapp.com/
 
 ## Description
 
