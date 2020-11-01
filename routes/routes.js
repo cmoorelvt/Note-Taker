@@ -2,21 +2,17 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = app => {
-
-    // Setup notes variable
     fs.readFile("db/db.json","utf8", (err, data) => {
 
         if (err) throw err;
 
         var notes = JSON.parse(data);
 
-        // API ROUTES
-        // ========================================================
-    
         // Setup the /api/notes get route
         app.get("/api/notes", function(req, res) {
             // Read the db.json file and return all saved notes as JSON.
             res.json(notes);
+            fs.readFile("db/db.json","utf8", (err, data))
         });
 
         // Setup the /api/notes post route
@@ -29,7 +25,7 @@ module.exports = app => {
         });
 
         // Retrieves a note with specific id
-        app.get("/api/notes/:id", function(req,res) {
+        app.get("/api/notes", function(req,res) {
             // display json for the notes array indices of the provided id
             res.json(notes[req.params.id]);
         });
@@ -40,9 +36,6 @@ module.exports = app => {
             updateDb();
             console.log("Deleted note with id "+req.params.id);
         });
-
-        // VIEW ROUTES
-        // ========================================================
 
         // Display notes.html when /notes is accessed
         app.get('/notes', function(req,res) {
