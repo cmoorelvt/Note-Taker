@@ -4,9 +4,9 @@
   "description": "Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cmoorelvt/Note-Taker.git"
@@ -16,7 +16,13 @@
   "homepage": "https://github.com/cmoorelvt/Note-Taker#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "mysql": "^2.17.1",
-    "node": "12.19.0"
-  }
+    "node": "12.19.0",
+    "path": "^0.12.7"
+  },
+  "bugs": {
+    "url": "https://github.com/cmoorelvt/Note-Taker/issues"
+  },
+  "devDependencies": {}
 }
