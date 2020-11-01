@@ -30,6 +30,7 @@ module.exports = app => {
 
         app.get('/notes', function(req,res) {
             res.sendFile(path.join(__dirname, "../public/notes.html"));
+            //console.log(path.join(_dirname, "./public/notes.html"))
         });
         
         app.get('*', function(req,res) {
