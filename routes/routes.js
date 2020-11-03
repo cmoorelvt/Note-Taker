@@ -4,11 +4,8 @@ const path = require('path');
 module.exports = app => {
     fs.readFile("db/db.json","utf8", (err, data) => {
         if (err) throw err;
-
         var notes = JSON.parse(data);
-        // Setup the /api/notes get route
         app.get("/api/notes", function(req, res) {
-            // Read the db.json file and return all saved notes as JSON.
             res.json(notes);
         });
 
@@ -18,12 +15,12 @@ module.exports = app => {
             let newNote = req.body;
             notes.push(newNote);
             updateDb();
-            return console.log("Added new note: "+newNote.title);
+            console.log("Added new note: "+newNote.title);
         });
 
         // Retrieves a note with specific id
-        app.get("/api/notes", function(req,res) {
-            // display json for the notes array indices of the provided id
+        app.get("/api/notes/:id", function(req,res) {
+            // display json for the notes array
             res.json(notes[req.params.id]);
         });
 
